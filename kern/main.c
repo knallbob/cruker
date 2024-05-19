@@ -1,9 +1,15 @@
-enum {
-    PERIPHERAL_BASE = 0xFE000000,
-    VIDEOCORE_MBOX = (PERIPHERAL_BASE + 0x0000B880),
-};
+#include "uart.h"
 
 void main()
 {
-    while (1);
+    // set up serial console
+    uart_init();
+    
+    // say hello
+    uart_puts("Hello World!\n");
+    
+    // echo everything back
+    while(1) {
+        uart_send(uart_getc());
+    }
 }

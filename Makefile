@@ -16,6 +16,9 @@ kernel8.img: boot.o $(OFILES)
 	$(GCCPATH)/aarch64-none-elf-objcopy -O binary kernel8.elf kernel8.img
 
 run:
+	qemu-system-aarch64 -M raspi3b -kernel kernel8.elf -serial null -serial stdio
+
+run_serial:
 	qemu-system-aarch64 -M raspi3b -nographic -kernel kernel8.elf
 
 clean:
