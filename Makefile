@@ -22,4 +22,4 @@ run_serial:
 	qemu-system-aarch64 -M raspi3b -nographic -kernel kernel8.elf
 
 clean:
-	/bin/rm kernel8.elf *.o *.img > /dev/null 2> /dev/null || true
+	rm kernel8.elf *.o *.img kern/*.o > /dev/null 2> /dev/null || true
