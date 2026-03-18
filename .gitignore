@@ -1,4 +1,4 @@
-kern/main.o
-boot.o
-kernel8.elf
-kernel8.img
+os.elf
+target/*
+Cargo.lock
+hdd.dsk
